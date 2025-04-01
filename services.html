@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKN Aesthetic Center</title>
+    <link rel="stylesheet" href="service.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Select Your Service</h2>
+
+        <!-- Service Types -->
+        <div class="service-box" onclick="toggleService('beauty')">Beauty Facial Treatments</div>
+        <div id="beauty" class="service-types">
+            <div class="service-item">
+                <label><input type="checkbox"> AQUAPURE Facial</label>
+                <div class="time-price">1 hour • $199</div>
+            </div>
+            <div class="service-item">
+                <label><input type="checkbox"> LED Oxygen Dome Facial</label>
+                <div class="time-price">1 hour • $150</div>
+            </div>
+            <div class="service-item">
+                <label><input type="checkbox"> Fire and Ice Facial</label>
+                <div class="time-price">1 hour • $139</div>
+            </div>
+        </div>
+
+        <div class="service-box" onclick="toggleService('medical')">Medical Facial Treatments</div>
+        <div id="medical" class="service-types">
+            <div class="service-item">
+                <label><input type="checkbox"> Microneedling</label>
+                <div class="time-price">1h 30m • $299</div>
+            </div>
+            <div class="service-item">
+                <label><input type="checkbox"> AQUAGLOW Facial</label>
+                <div class="time-price">1 hour • $350</div>
+            </div>
+        </div>
+
+        <div class="service-box" onclick="toggleService('body')">Advanced Body Treatment</div>
+        <div id="body" class="service-types">
+            <div class="service-item">
+                <label><input type="checkbox"> LED Collagen Boost Capsule</label>
+                <div class="time-price">1 hour • $139</div>
+            </div>
+        </div>
+
+        <div class="service-box" onclick="toggleService('analysis')">New Client - Skin Analysis</div>
+        <div id="analysis" class="service-types">
+            <div class="service-item">
+                <label><input type="checkbox"> 3D Skin Analysis</label>
+                <div class="time-price">45 mins • Free</div>
+            </div>
+        </div>
+
+        <button id="continue-btn" class="continue-button" style="display:none;" onclick="fadeOutAndRedirect('date.html')">Continue</button>
+
+    </div>
+
+    <script>
+        function toggleService(id) {
+            var service = document.getElementById(id);
+            if (service.style.display === "none" || service.style.display === "") {
+                service.style.display = "block";
+            } else {
+                service.style.display = "none";
+            }
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+            const checkboxes = document.querySelectorAll("input[type='checkbox']");
+            const continueBtn = document.getElementById("continue-btn");
+
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener("change", function () {
+                    let checked = Array.from(checkboxes).some(checkbox => checkbox.checked);
+                    continueBtn.style.display = checked ? "block" : "none";
+                });
+            });
+        });
+        function fadeOutAndRedirect(page) {
+            document.body.classList.add("fade-out"); // Apply fade-out effect
+            setTimeout(() => {
+                window.location.href = page; // Redirect after fade-out
+            }, 500); // Match the transition duration in CSS
+        }
+    </script>
+
+</body>
+</html>

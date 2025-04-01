@@ -1,0 +1,95 @@
+/* General Styling */
+body {
+    background-color: aliceblue;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+/* Container Styling */
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 500px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Heading Styling */
+h2 {
+    font-size: 40px;
+    font-weight: bold;
+    background: linear-gradient(to right, #F7EF8A, #D2AC47, #EDC967);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    animation: popInFromTop 1s ease-out forwards;
+}
+
+/* Button Styling (Same as Home Page for Uniformity) */
+.button {
+    background: linear-gradient(to right, #F7EF8A, #D2AC47, #EDC967);
+    border: none;
+    color: black;
+    padding: 20px 40px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 80%;
+    max-width: 300px;
+    display: block;
+    animation: popUpFromBottom 1s ease-out forwards;
+}
+
+/* Button Hover Effect */
+.button:hover {
+    background: linear-gradient(to right, #D2AC47, #F7EF8A, #EDC967);
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Pop-Up Animation for Buttons */
+@keyframes popUpFromBottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Heading Animation */
+@keyframes popInFromTop {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Fade-In Animation for Container */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

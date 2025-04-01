@@ -1,0 +1,93 @@
+body {
+    background-color: aliceblue;
+    display: fixed;
+}
+.navbar {
+    background: linear-gradient(to right, #F7EF8A, #D2AC47, #EDC967 );
+    padding-top: 15px;
+    padding-bottom: 15PX;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+.navdiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-left a{
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 40px;
+    font-weight: 600;
+    color: aliceblue;
+}
+li{
+    list-style: none;
+    display: inline-block;
+    color: aliceblue;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 25px;
+}
+li button {
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    background: linear-gradient(to right, #F7EF8A, #D2AC47, #EDC967);
+    padding: 15px 20px;
+    border-color: black;
+    border-radius: 30px;
+    cursor: pointer;
+}
+li button:hover {
+    transform: scale(1.05);
+}
+
+.homepage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50vh;
+    text-align: center;
+    align-items: center;
+    place-items: center;
+}
+.homepage h2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: black;
+    font-size: 80px;
+    font-weight: bold;
+}
+.tagline {
+    font-size: 22px;
+    font-weight: 600;
+    font-style: italic;
+    color: #333;
+    text-align: center;
+    margin-top: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    display: block;
+    width: 100%;
+}
+.book-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 15px 25px;
+    font-size: 18px;
+    background-color: transparent;
+    color: black;
+    border: 2px solid black;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+.book-btn:hover {
+    transform: scale(1.05);
+}
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}

@@ -1,0 +1,113 @@
+/* Body Styling */
+body {
+    background: aliceblue;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+}
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+
+/* Container Styling */
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    transition: opacity 1s;
+}
+
+/* Title Styling */
+h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #D2AC47;
+    margin-bottom: 20px;
+}
+
+/* Branch Selection Wrapper */
+.branch-selection {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+/* Branch Option (Styled like Input Fields) */
+.branch-option {
+    width: 90%;
+    padding: 12px;
+    margin: 10px auto;
+    border: 1px solid #D2AC47;
+    border-radius: 10px;
+    font-size: 16px;
+    background: white;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Selected Branch Effect */
+.branch-option.selected {
+    background: #EDC967;
+    color: black;
+    font-weight: bold;
+}
+
+/* Centering Container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Continue Button */
+.continue-button {
+    background: linear-gradient(to right, #D2AC47, #F7EF8A, #EDC967);
+    border: none;
+    color: black;
+    padding: 12px 25px; /* Smaller size */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 20px;
+    width: auto;
+    margin-top: 15px;
+    display: none; /* Hidden initially */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Centering */
+    align-self: center;
+}
+
+/* Hover Effect */
+.continue-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 28px;
+    color: #D2AC47; /* Your theme color */
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-button:hover {
+    color: #EDC967; /* Slightly lighter shade */
+    transform: scale(1.1);
+}

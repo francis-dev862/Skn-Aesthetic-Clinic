@@ -1,0 +1,261 @@
+
+------------------------
+Code Revision as of February 24
+*HOMEPAGE (HTML CODE)
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SKN Aesthetic Center</title>
+        <link rel="stylesheet" href="home.css">
+    </head>
+    <body>
+        <div class="background">
+            <div class="homepage-form">
+                <h2>SKN Appointment System</h2>
+                <p class="tagline">"Take time to make your SKN happy with SKN Aesthetic Center"</p>
+            </div>
+        </div>
+        <div>
+            <button class="button" onclick="location.href='index.html'">BOOK NOW</button>
+        </div>
+    </body>
+</html>
+
+*HOMPAGE (CSS CODE)
+/* Button Style */
+.button {
+    background: linear-gradient(to right, #F7EF8A, #D2AC47, #EDC967); /* Gradient from your provided colors */
+    border: none;
+    color: black; /* Text color for button */
+    padding: 20px 40px; /* Adjusted padding for a wider button */
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 30px; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    animation: popUpFromBottom 1s ease-out forwards; /* Pop-up effect */
+}
+
+/* Button Hover Effect */
+.button:hover {
+    background: linear-gradient(to right, #D2AC47, #F7EF8A, #EDC967); /* Reverse the gradient on hover */
+    transform: scale(1.1); /* Slightly increase size on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a shadow for better contrast */
+    border: 2px solid #EDC967; /* Optional: Add a border to make hover more visible */
+}
+
+/* Button Pop-Up Animation */
+@keyframes popUpFromBottom {
+    0% {
+        transform: translateY(100%); /* Start off-screen below */
+        opacity: 0; /* Start with no opacity */
+    }
+    100% {
+        transform: translateY(0); /* Move to normal position */
+        opacity: 1; /* Fade in */
+    }
+}
+
+
+/* Text Styling for Heading (e.g., SKN APPOINTMENT SYSTEM) on Homepage */
+.homepage-form h2 {
+    font-size: 60px;  /* Make text larger */
+    font-weight: bold;  /* Make text bold */
+    background: linear-gradient(to right, #F7EF8A, #D2AC47, #EDC967); /* Apply gradient to text */
+    -webkit-background-clip: text;  /* Clip background to text */
+    color: transparent;  /* Text color becomes transparent to show the gradient */
+    text-align: center;
+    letter-spacing: 5px;  /* Increase spacing for readability */
+    text-transform: uppercase;  /* Uppercase for emphasis */
+    animation: popInFromLeft 1s ease-out forwards;  /* Slide-in effect only (no shimmer) */
+    display: inline-block;  /* Ensure the text is inline */
+    line-height: 1.2; /* Adjust line-height for better appearance */
+    width: max-content; /* Ensure the width of the text is only as wide as its content */
+}
+
+/* Keyframes for Slide-in Text Animation */
+@keyframes popInFromLeft {
+    0% {
+        transform: translateX(-100%);  /* Start off-screen to the left */
+        opacity: 0;  /* Start with no opacity */
+    }
+    100% {
+        transform: translateX(0);  /* Move to center */
+        opacity: 1;  /* Fade in */
+    }
+}
+/* Tagline Styling */
+.tagline {
+    font-size: 22px; /* Increased size */
+    font-weight: 600; /* Slightly bolder for emphasis */
+    font-style: italic;
+    color: #333; /* Darker gray for contrast */
+    text-align: center;
+    margin-top: 10px;
+    font-family: 'Times New Roman', Times, serif; /* Updated font */
+    display: block; /* Ensures it stays centered */
+    width: 100%; /* Makes sure it aligns properly */
+}
+
+
+/* Body Styling */
+body {
+    background-color: aliceblue;  /* Aliceblue background */
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    color: black;  /* Black text color to contrast with background */
+    font-family:'Times New Roman', Times, serif /* Choose a clear font */
+}
+
+************INDEX (HTML CODE)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKN Aesthetic Center</title>
+    <link rel="stylesheet" href="index.css".css">
+</head>
+<body>
+    <div class="container">
+        <!-- Login Form -->
+        <div id="login-form" class="form-box">
+            <form action="dashboard.html" method="POST">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="button">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" onclick="showSignup()">Sign up</a></p>
+        </div>
+
+        <!-- Signup Form -->
+        <div id="signup-form" class="form-box" style="display: none;">
+            <form onsubmit="return validatePassword()">
+                <input type="text" id="name" placeholder="Full Name" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+                <p id="password-error" class="error-message"></p>
+                <button type="submit" class="button">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+        </div>
+    </div>
+
+    <script>
+        function showSignup() {
+            document.getElementById("login-form").style.display = "none";
+            document.getElementById("signup-form").style.display = "block";
+        }
+
+        function showLogin() {
+            document.getElementById("signup-form").style.display = "none";
+            document.getElementById("login-form").style.display = "block";
+        }
+
+        function validatePassword() {
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirm-password").value;
+            let errorMessage = document.getElementById("password-error");
+
+            if (password !== confirmPassword) {
+                errorMessage.innerText = "Passwords do not match!";
+                errorMessage.style.color = "red";
+                return false; // Prevent form submission
+            }
+            return true; // Allow form submission
+        }
+    </script>
+</body>
+</html>
+
+
+**************INDEX (CSS CODE)
+/* Body Styling */
+body {
+    background: aliceblue;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+}
+
+/* Centering Wrapper */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Form Box (White Box) */
+.form-box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    text-align: center;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Input Fields */
+.form-box input {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #D2AC47;
+    border-radius: 10px;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Button Style */
+.button {
+    background: linear-gradient(to right, #F7EF8A, #D2AC47, #EDC967);
+    border: none;
+    color: black;
+    padding: 15px 30px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Button Hover Effect */
+.button:hover {
+    background: linear-gradient(to right, #D2AC47, #F7EF8A, #EDC967);
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Error Message for Password */
+.error-message {
+    font-size: 14px;
+    color: red;
+    margin-top: -10px;
+}
+
+
+
