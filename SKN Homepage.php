@@ -1,3 +1,5 @@
+<?php
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,7 +16,7 @@
                     <li>About Us</li>
                     <li>FAQ</li>
                     <li>Contact Us</li>
-                    <li><button onclick="fadeOutAndRedirect('branch.html')">BOOK NOW</button></li>
+                    <li><button onclick="fadeOutAndRedirect('#')">LOG IN</button></li>
                 </ul>
             </div>
         </nav>
@@ -24,7 +26,7 @@
                 <p class="tagline">"Take time to make your SKN happy with SKN Aesthetic Center"</p>
             </div>
         </div>
-        <div><button class="book-btn" onclick="fadeOutAndRedirect('branch.html')">BOOK NOW</button></div>
+        <div><button class="book-btn" onclick="fadeOutAndRedirect('branch.php')">BOOK NOW</button></div>
 
         <script>
             function fadeOutAndRedirect(page) {
@@ -35,25 +37,6 @@
             }
         </script>
     </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </html>
+<?php
+?>

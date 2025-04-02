@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Continue Button Redirect
     document.getElementById("continue-btn").addEventListener("click", function () {
-        fadeOutAndRedirect("credentials.html"); // Redirect without storing anything
+        fadeOutAndRedirect("credentials.php"); // Redirect without storing anything
     });
 });
 

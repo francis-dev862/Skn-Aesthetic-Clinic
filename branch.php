@@ -1,3 +1,5 @@
+<?php
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,12 +13,12 @@
 
         <h2>Select Your Preferred Branch</h2>
         
-        <div class="branch-selection">
+        <div class="branch-selection" id="branch">
             <div class="branch-option" onclick="selectBranch(this, 'Quezon City')">West Triangle, Quezon Ave., Quezon City</div>
             <div class="branch-option" onclick="selectBranch(this, 'San Jose Del Monte')">San Jose Del Monte, Bulacan</div>
         </div>
 
-        <button id="continue-btn" class="continue-button" style="display:none;" onclick="fadeOutAndRedirect('services.html')">Continue</button>
+        <button id="continue-btn" class="continue-button" style="display:none;" onclick="fadeOutAndRedirect('services.php')">Continue</button>
     </div>
 
     <script>
@@ -41,3 +43,5 @@
     </script>
 </body>
 </html>
+<?php
+?>
