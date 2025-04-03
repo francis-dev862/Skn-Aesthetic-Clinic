@@ -1,5 +1,3 @@
-<?php
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,10 +12,8 @@
 <body>
     <div class="container">
         <h2>Select Your Appointment Date & Time</h2>
-        <input type="text" id="date-picker" class="full-calendar" name="appointment_date" >
-        <button class="continue-button" id="continue-btn" onclick="fadeOutAndRedirect('credentials.php')" name = "appointment_time">Continue</button>
+        <input type="text" id="date-picker" class="full-calendar">
+        <button class="continue-button" id="continue-btn" onclick="fadeOutAndRedirect('credentials.html')">Continue</button>
     </div>
 </body>
 </html>
-<?php
-?>
