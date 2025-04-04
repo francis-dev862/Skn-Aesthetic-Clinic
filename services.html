@@ -8,66 +8,58 @@
 </head>
 <body>
 
-    <div class="container">
-        <h2>Select Your Service</h2>
-
-        <!-- Service Types -->
+<div class="container">
+    <h2>Select Your Service</h2>
+    <form action="process_services.php" method="POST">
+        <!-- Beauty Facial Treatments -->
         <div class="service-box" onclick="toggleService('beauty')">Beauty Facial Treatments</div>
         <div id="beauty" class="service-types">
             <div class="service-item">
-                <label><input type="checkbox"> OIL CONTROL Facial</label>
-                <div class="time-price">Basic • ₱488</div>
+                <label><input type="checkbox" name="services[]" value="OIL CONTROL Facial - ₱488"> OIL CONTROL Facial</label>
             </div>
             <div class="service-item">
-                <label><input type="checkbox"> DEEP Facial</label>
-                <div class="time-price">(SIGNATURE) With diamond peel galvanic • ₱788</div>
+                <label><input type="checkbox" name="services[]" value="DEEP Facial - ₱788"> DEEP Facial</label>
             </div>
             <div class="service-item">
-                <label><input type="checkbox"> WARTS REMOVAL</label>
-                <div class="time-price">*Unlimited flat warts only • ₱1,500</div>
+                <label><input type="checkbox" name="services[]" value="WARTS REMOVAL - ₱1,500"> WARTS REMOVAL</label>
             </div>
         </div>
 
+        <!-- Gluta Drips -->
         <div class="service-box" onclick="toggleService('medical')">Gluta Drips</div>
         <div id="medical" class="service-types">
             <div class="service-item">
-                <label><input type="checkbox"> CELESTIAL DRIP</label>
-                <div class="time-price">₱ 8,988</div>
-                <div class="time-price">10 CELESTIAL DRIP | 4 Free treatment Per session • ₱1,000</div>
+                <label><input type="checkbox" name="services[]" value="CELESTIAL DRIP - ₱8,988"> CELESTIAL DRIP</label>
             </div>
             <div class="service-item">
-                <label><input type="checkbox"> SNOW WHITE DRIP</label>
-                <div class="time-price">₱ 21,000</div>
-                <div class="time-price">10 Power dose drip | 30 Free treatment & HIFU  Per session • ₱2,500</div>
+                <label><input type="checkbox" name="services[]" value="SNOW WHITE DRIP - ₱21,000"> SNOW WHITE DRIP</label>
             </div>
             <div class="service-item">
-                <label><input type="checkbox"> POWER DOSE DRIP</label>
-                <div class="time-price">₱ 16,988</div>
-                <div class="time-price">10 Snow white drip | 20 Free treatment & HIFU  Per session • ₱1,788</div>
+                <label><input type="checkbox" name="services[]" value="POWER DOSE DRIP - ₱16,988"> POWER DOSE DRIP</label>
             </div>
         </div>
 
+        <!-- Advanced Body Treatment -->
         <div class="service-box" onclick="toggleService('body')">Advanced Body Treatment</div>
         <div id="body" class="service-types">
             <div class="service-item">
-                <label><input type="checkbox"> LED Collagen Boost Capsule</label>
-                <div class="time-price">1 hour • $139</div>
+                <label><input type="checkbox" name="services[]" value="LED Collagen Boost Capsule - $139"> LED Collagen Boost Capsule</label>
             </div>
         </div>
 
+        <!-- Skin Analysis -->
         <div class="service-box" onclick="toggleService('analysis')">New Client - Skin Analysis</div>
         <div id="analysis" class="service-types">
             <div class="service-item">
-                <label><input type="checkbox"> 3D Skin Analysis</label>
-                <div class="time-price">45 mins • Free</div>
+                <label><input type="checkbox" name="services[]" value="3D Skin Analysis - Free"> 3D Skin Analysis</label>
             </div>
         </div>
 
-        <button id="continue-btn" class="continue-button" style="display:none;" onclick="fadeOutAndRedirect('date.html')">Continue</button>
+        <button type="submit" id="continue-btn" class="continue-button" style="display:none;">Continue</button>
+    </form>
+</div>
 
-    </div>
-
-    <script>
+<script>
         function toggleService(id) {
             var service = document.getElementById(id);
             if (service.style.display === "none" || service.style.display === "") {
@@ -76,6 +68,7 @@
                 service.style.display = "none";
             }
         }
+
         document.addEventListener("DOMContentLoaded", function () {
             const checkboxes = document.querySelectorAll("input[type='checkbox']");
             const continueBtn = document.getElementById("continue-btn");
@@ -87,12 +80,6 @@
                 });
             });
         });
-        function fadeOutAndRedirect(page) {
-            document.body.classList.add("fade-out"); // Apply fade-out effect
-            setTimeout(() => {
-                window.location.href = page; // Redirect after fade-out
-            }, 500); // Match the transition duration in CSS
-        }
     </script>
 
 </body>
