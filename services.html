@@ -7,66 +7,72 @@
     <link rel="stylesheet" href="service.css">
 </head>
 <body>
-
 <div class="container">
     <h2>Select Your Service</h2>
-    <form action="process_services.php" method="POST">
+    <form action="services-form.php" method="POST">
         <!-- Beauty Facial Treatments -->
         <div class="service-box" onclick="toggleService('beauty')">Beauty Facial Treatments</div>
-        <div id="beauty" class="service-types">
+        <div id="beauty" class="service-types" style="display:none;">
             <div class="service-item">
-                <label><input type="checkbox" name="services[]" value="OIL CONTROL Facial - ₱488"> OIL CONTROL Facial</label>
+                <label><input type="checkbox" name="services[Beauty Facial Treatments][]" value="OIL CONTROL Facial"> OIL CONTROL Facial</label>
+                <div class="time-price">Basic • ₱488</div>
             </div>
             <div class="service-item">
-                <label><input type="checkbox" name="services[]" value="DEEP Facial - ₱788"> DEEP Facial</label>
+                <label><input type="checkbox" name="services[Beauty Facial Treatments][]" value="DEEP Facial"> DEEP Facial</label>
+                <div class="time-price">(SIGNATURE) With diamond peel galvanic • ₱788</div>
             </div>
             <div class="service-item">
-                <label><input type="checkbox" name="services[]" value="WARTS REMOVAL - ₱1,500"> WARTS REMOVAL</label>
+                <label><input type="checkbox" name="services[Beauty Facial Treatments][]" value="WARTS REMOVAL"> WARTS REMOVAL</label>
+                <div class="time-price">*Unlimited flat warts only • ₱1,500</div>
             </div>
         </div>
 
         <!-- Gluta Drips -->
         <div class="service-box" onclick="toggleService('medical')">Gluta Drips</div>
-        <div id="medical" class="service-types">
+        <div id="medical" class="service-types" style="display:none;">
             <div class="service-item">
-                <label><input type="checkbox" name="services[]" value="CELESTIAL DRIP - ₱8,988"> CELESTIAL DRIP</label>
+                <label><input type="checkbox" name="services[Gluta Drips][]" value="CELESTIAL DRIP"> CELESTIAL DRIP</label>
+                <div class="time-price">₱ 8,988</div>
+                <div class="time-price">10 CELESTIAL DRIP | 4 Free treatment Per session • ₱1,000</div>
             </div>
             <div class="service-item">
-                <label><input type="checkbox" name="services[]" value="SNOW WHITE DRIP - ₱21,000"> SNOW WHITE DRIP</label>
+                <label><input type="checkbox" name="services[Gluta Drips][]" value="SNOW WHITE DRIP"> SNOW WHITE DRIP</label>
+                <div class="time-price">₱ 21,000</div>
+                <div class="time-price">10 Power dose drip | 30 Free treatment & HIFU Per session • ₱2,500</div>
             </div>
             <div class="service-item">
-                <label><input type="checkbox" name="services[]" value="POWER DOSE DRIP - ₱16,988"> POWER DOSE DRIP</label>
+                <label><input type="checkbox" name="services[Gluta Drips][]" value="POWER DOSE DRIP"> POWER DOSE DRIP</label>
+                <div class="time-price">₱ 16,988</div>
+                <div class="time-price">10 Snow white drip | 20 Free treatment & HIFU Per session • ₱1,788</div>
             </div>
         </div>
 
         <!-- Advanced Body Treatment -->
         <div class="service-box" onclick="toggleService('body')">Advanced Body Treatment</div>
-        <div id="body" class="service-types">
+        <div id="body" class="service-types" style="display:none;">
             <div class="service-item">
-                <label><input type="checkbox" name="services[]" value="LED Collagen Boost Capsule - $139"> LED Collagen Boost Capsule</label>
+                <label><input type="checkbox" name="services[Advanced Body Treatment][]" value="LED Collagen Boost Capsule"> LED Collagen Boost Capsule</label>
+                <div class="time-price">1 hour • $139</div>
             </div>
         </div>
 
-        <!-- Skin Analysis -->
+        <!-- New Client - Skin Analysis -->
         <div class="service-box" onclick="toggleService('analysis')">New Client - Skin Analysis</div>
-        <div id="analysis" class="service-types">
+        <div id="analysis" class="service-types" style="display:none;">
             <div class="service-item">
-                <label><input type="checkbox" name="services[]" value="3D Skin Analysis - Free"> 3D Skin Analysis</label>
+                <label><input type="checkbox" name="services[Skin Analysis][]" value="3D Skin Analysis"> 3D Skin Analysis</label>
+                <div class="time-price">45 mins • Free</div>
             </div>
         </div>
 
-        <button type="submit" id="continue-btn" class="continue-button" style="display:none;">Continue</button>
+        <button id="continue-btn" class="continue-button" style="display:none;" type="submit">Continue</button>
     </form>
 </div>
 
 <script>
         function toggleService(id) {
-            var service = document.getElementById(id);
-            if (service.style.display === "none" || service.style.display === "") {
-                service.style.display = "block";
-            } else {
-                service.style.display = "none";
-            }
+            const section = document.getElementById(id);
+            section.style.display = section.style.display === "none" || section.style.display === "" ? "block" : "none";
         }
 
         document.addEventListener("DOMContentLoaded", function () {
@@ -75,9 +81,20 @@
 
             checkboxes.forEach(checkbox => {
                 checkbox.addEventListener("change", function () {
-                    let checked = Array.from(checkboxes).some(checkbox => checkbox.checked);
-                    continueBtn.style.display = checked ? "block" : "none";
+                    const anyChecked = Array.from(checkboxes).some(c => c.checked);
+                    continueBtn.style.display = anyChecked ? "block" : "none";
                 });
+            });
+
+            // Intercept form submission for fade effect
+            const form = document.querySelector("form");
+            form.addEventListener("submit", function (e) {
+                e.preventDefault(); // Stop immediate submission
+                document.body.classList.add("fade-out");
+
+                setTimeout(() => {
+                    form.submit(); // Now submit the form after fade
+                }, 500);
             });
         });
     </script>

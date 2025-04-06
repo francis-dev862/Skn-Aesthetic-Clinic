@@ -1,4 +1,4 @@
-CREATE DATABASE skn_aesthetic;
+CREATE DATABASE skn_booking;
 USE skn_aesthetic;
 
 CREATE TABLE service_selections (
