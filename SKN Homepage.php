@@ -29,7 +29,7 @@
                     <a class="nav-link" href="#">Contact Us</a>
                 </li>
                 <li class="nav-item">
-                <button type="button" class="btn btn-outline-light btn-lg shadow" data-bs-toggle="modal" data-bs-target="#client_side">
+                <button type="button" class="btn btn-outline-light btn-lg shadow" data-bs-toggle="modal" data-bs-target="#login_modal">
             Log In
         </button>
                 </li>
@@ -38,28 +38,8 @@
             </div>
         </nav>
         <!-- MODAL FOR CHOOSING CLIENT OR ADMIN SIDE -->
-        <div class="modal fade" id="client_side" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" style="width: 1000px !important; height: 250px !important;">
-            <div class="modal-content">
-            <div class="modal-header" style="background: linear-gradient(to right, #F7EF8A, #D2AC47, #EDC967 );">LOG IN AS
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-            <div class="d-grid gap-2">
-            <button class="btn btn-outline-dark btn-lg shadow" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">Client</button>
-            <button class="btn btn-outline-dark btn-lg shadow" type="button">Admin</button>
-            </div>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-
-            </div>
-            </div>
-            </div>
-        </div>
-
-        <!-- Client Login Modal -->
-        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <!-- Login Modal -->
+        <div class="modal fade" id="login_modal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
             <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header" style="background: linear-gradient(to right, #F7EF8A, #D2AC47, #EDC967 );">
@@ -69,7 +49,47 @@
                 <div class="modal-body">
                 <form>
                     <div class="mb-3">
-                    <label for="username" class="form-label">Username</label>
+                    <label for="username" class="form-label">Email</label>
+                    <input type="text" class="form-control" id="username" aria-describedby="usernameHelp">
+                    </div>
+                    <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password">
+                    </div>
+                    <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="rememberMe">
+                    <label class="form-check-label" for="rememberMe">Remember me</label>
+                    </div>
+                    <div style="text-align: center;">
+                    <button type="submit" class="btn btn-primary" style="background: linear-gradient(to right, #F7EF8A, #D2AC47, #EDC967 ); border-radius: 10px; border: 1px solid white; box-shadow: 0 4px 8px rgba(0,0,0,0.2); width: 150px; height: 50px; font-size: 18px;">Submit</button>
+                    </div>
+                </form>
+                </div>
+                <div>
+                <p style="text-align:center; margin-top: 15px">Don't have an account? <a href="Sign_up_Modal.php">Sign up here</a></p>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Sign Up Modal -->
+  
+
+           <!-- ADMIN Login Modal -->
+           <div class="modal fade" id="Admin_login_Modal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background: linear-gradient(to right, #F7EF8A, #D2AC47, #EDC967 );">
+                <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                    <label for="username" class="form-label">Email</label>
                     <input type="text" class="form-control" id="username" aria-describedby="usernameHelp">
                     </div>
                     <div class="mb-3">

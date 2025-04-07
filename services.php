@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <div class="container">
+    <div class="container" id="service">
         <h2>Select Your Service</h2>
 
         <!-- Service Types -->
@@ -63,7 +63,7 @@
             </div>
         </div>
 
-        <button id="continue-btn" class="continue-button" style="display:none;" onclick="fadeOutAndRedirect('date.html')">Continue</button>
+        <button id="continue-btn" class="continue-button" style="display:none;" onclick="fadeOutAndRedirect('date.php')">Continue</button>
 
     </div>
 

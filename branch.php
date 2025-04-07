@@ -16,7 +16,7 @@
             <div class="branch-option" onclick="selectBranch(this, 'San Jose Del Monte')">San Jose Del Monte, Bulacan</div>
         </div>
 
-        <button id="continue-btn" class="continue-button" style="display:none;" onclick="fadeOutAndRedirect('services.html')">Continue</button>
+        <button id="continue-btn" class="continue-button" style="display:none;" onclick="fadeOutAndRedirect('services.php')">Continue</button>
     </div>
 
     <script>

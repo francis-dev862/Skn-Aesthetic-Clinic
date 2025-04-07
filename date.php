@@ -10,10 +10,10 @@
     <script src="date.js" defer></script>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="appointment_datetime">
         <h2>Select Your Appointment Date & Time</h2>
         <input type="text" id="date-picker" class="full-calendar">
-        <button class="continue-button" id="continue-btn" onclick="fadeOutAndRedirect('credentials.html')">Continue</button>
+        <button class="continue-button" id="continue-btn" onclick="fadeOutAndRedirect('credentials.php')">Continue</button>
     </div>
 </body>
 </html>
